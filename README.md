@@ -4,7 +4,15 @@ Welcome! This is your chance to talk through a real-world problem, show how you 
 
 ## Part 1: The case ⚓
 
-**TODO:** We’ll share a case from our domain and use it as the basis for a discussion. You’ll present your solution to two audiences:
+For this case, imagine we’re building a **Know Your Customer (KYC)** system for marine insurance underwriting. Underwriting is often our first interaction with a customer, and vessels are high-value assets whose ownership and connections can be difficult to see. We want to identify potentially high-risk parties and vessels, and understand how vessel ownership connects them.
+
+The assessment is about designing a system that brings relevant information together and makes risk understandable—not about finding one “correct” risk formula. Consider signals such as sanctions, politically exposed person (PEP) status, fraud, and opaque ownership. A PEP flag should inform an assessment, not automatically rule out a customer; sanctions may be disqualifying, depending on the applicable rules.
+
+As a starting point, you could propose a simple rule for how risk is reflected across ownership relationships: the directly flagged party carries the highest risk, parties one ownership link away carry less, and risk decreases further with each link. For example, links at two or three steps away might receive progressively lower risk. Treat this as a business-rule assumption to discuss, not a prescribed or legally validated model. The system should show a risk tag and its basis so a human underwriter can decide whether to proceed.
+
+Assume the system will use existing data sources. Consider what information you would need, how you would assess its reliability and freshness, and how relevant regulations could affect the result—for example, a restriction on doing business with parties based in a particular country.
+
+You’ll present your solution to two audiences:
 
 - **Product owner or non-technical manager:** What are we doing, why does it matter, and what might it cost? Talk through risks, progress, and how you’d keep stakeholders informed.
 - **Technical team:** Walk us through the architecture. Diagrams are very welcome 🙏. We can discuss security, integrations and contracts, and the decisions and trade-offs behind your design.
