@@ -27,7 +27,7 @@ Keep it simple: a search box and results are enough. You do not need data-entry 
 
 There is no time limit for preparation. The 20 minutes is for showing and discussing your work during the interview. You may use an LLM and any programming language or tools you like. The app does not need to be perfect or ready for real use.
 
-**The main focus is the design and model behind your app:** how they reflect your Part 1 proposal. Be ready to explain the main concepts, how they relate to each other, and your DTOs and APIs. We’re interested in why you made those choices, not how much code you (or the ) wrote.
+**The main focus is the design and model behind your app:** how they reflect your Part 1 proposal. Be ready to explain the main concepts, how they relate to each other, and your DTOs and APIs. We’re interested in why you made those choices, not how much code you (or the 🤖) wrote.
 
 ## Part 3: The curveball ⚾ (15 minutes)
 
