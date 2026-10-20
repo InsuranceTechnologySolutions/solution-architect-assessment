@@ -1,35 +1,43 @@
 # Solution architect assessment 🛠️
 
-Welcome! This is your chance to talk through a real-world problem, show how you approach a small proof of concept, and have some fun exploring a curveball. We’re way more interested in how you think and communicate than in a single “right” answer.
+Welcome! This assessment is about how you approach a real problem, explain your ideas and respond to a change in requirements. We’re interested in your thinking, not in one “right” answer.
+
+**About the times:** These are the time allowed for each activity during the interview. They are not limits on how long you can prepare. Please keep your preparation simple and focused; we want to discuss your approach, so your artifacts / outcome does not need to be super polished. 
 
 ## Part 1: The case ⚓
 
-For this case, imagine we’re building a **Know Your Customer (KYC)** system for marine insurance underwriting. Underwriting is often our first interaction with a customer, and vessels are high-value assets whose ownership and connections can be difficult to see. We want to identify potentially high-risk parties and vessels, and understand how vessel ownership connects them.
+Imagine we’re building a **Know Your Customer (KYC)** system for marine insurance. Before an insurer agrees to insure anything, it assesses the risk. Vessels can be valuable, and it may be hard to see who owns or controls them. We want to identify parties (such as owners) and vessels that may be high risk, and understand how they are connected.
 
-The assessment is about designing a system that brings relevant information together and makes risk understandable—not about finding one “correct” risk formula. Consider signals such as sanctions, politically exposed person (PEP) status, fraud, and opaque ownership. A PEP flag should inform an assessment, not automatically rule out a customer; sanctions may be disqualifying, depending on the applicable rules.
+Design a system that brings useful information together and makes the risk clear. There is no single “correct” way to calculate this type of risk. Consider things like sanctions, politically exposed person (PEP) status and fraud. A PEP flag should be considered, but should not automatically rule out a customer. Sanctions may mean the insurer cannot do business with someone, depending on the rules that apply (this can be a bit unclear, but make assumptions and we'll discuss, this is difficult in the real world too).
 
-As a starting point, you could propose a simple rule for how risk is reflected across ownership relationships: the directly flagged party carries the highest risk, parties one ownership link away carry less, and risk decreases further with each link. For example, links at two or three steps away might receive progressively lower risk. Treat this as a business-rule assumption to discuss, not a prescribed or legally validated model. The system should show a risk tag and its basis so a human underwriter can decide whether to proceed.
+As a starting point, you could suggest that risk gets lower the further a party is from a flagged person or company in the ownership chain. For example, a party one link away might have less risk than the flagged party, and a party two or three links away might have less again. This is only an idea to discuss, not a required or legally approved rule. Show a risk label and explain what it is based on, so an underwriter can make a decision.
 
-Assume the system will use existing data sources. Consider what information you would need, how you would assess its reliability and freshness, and how relevant regulations could affect the result—for example, a restriction on doing business with parties based in a particular country.
+Assume the system will use existing data sources. Think about what information it needs, how reliable and up to date that information is, and how regulations could affect the result. For example, there may be rules against doing business with parties in certain countries. State your assumptions.
 
-You’ll present your solution to two audiences:
+**Prepare two 15-minute presentations of your solution, one for each audience:**
 
-- **Product owner or non-technical manager:** What are we doing, why does it matter, and what might it cost? Talk through risks, progress, and how you’d keep stakeholders informed.
-- **Technical team:** Walk us through the architecture. Diagrams are very welcome 🙏. We can discuss security, integrations and contracts, and the decisions and trade-offs behind your design.
+- **Product owner or non-technical manager:** Explain what you would build and why it matters. Talk about likely costs, risks, progress and how you would keep people informed. Rough estimates are fine; explain your assumptions.
+- **Technical team:** Explain how you would build it. Diagrams are welcome 🙏. Be ready to discuss your design choices.
 
-## Part 2: Coding assessment ⌨️
+## Part 2: Coding assessment ⌨️ (20 minutes)
 
-We’ll identify a problem from the case for you to explore by creating a proof of concept (PoC). **NOTE: INSERT PROBLEM HERE**. Focus on demonstrating your approach and explaining your choices; the PoC doesn’t need to be production-ready.
+**Problem:** Build a simple KYC app for marine insurance, based on Part 1. A user should be able to search for a vessel, person or company and see its risk profile, including the reasons for the risk and any related people, companies or vessels and their risk profiles.
 
-## Part 3: The curveball ⚾
+Keep it simple: a search box and results are enough. You do not need data-entry forms or a polished user interface. Use sample data to show your model. You can create the data yourself or use a library such as Bogus or AutoBogus. You do not need to connect to real data sources.
 
-Something changes in the requirements. We’ll share the details during the interview, then work through the conundrum together using a pen, a whiteboard, and conversation. We’re interested in how you adapt, explore options, and communicate—not how quickly you arrive at an answer.
+There is no time limit for preparation. The 20 minutes is for showing and discussing your work during the interview. You may use an LLM and any programming language or tools you like. The app does not need to be perfect or ready for real use.
+
+**The main focus is the design and model behind your app:** how they reflect your Part 1 proposal. Be ready to explain the main concepts, how they relate to each other, and your DTOs and APIs. We’re interested in why you made those choices, not how much code you (or the ) wrote.
+
+## Part 3: The curveball ⚾ (15 minutes)
+
+The requirements will change. We’ll explain what has changed during the interview and discuss it together, using a whiteboard if helpful. We want to see how you adapt, consider options and explain your thinking—not how quickly you find an answer.
 
 
-**Additional notes:** You can use whatever tool you want to present (PPT, Google presentaions, github pages), no constraints. 
+**Additional notes:** Use any tool you like for your presentations, such as PowerPoint, Google Slides or GitHub Pages.
 
-When it comes to the coding part, please share the respository link up front. Send it to stig.nielsen@instech.no, and he will distribute it within the team. 
+For the coding part, please send your repository link to stig.nielsen@instech.no before the interview. He will share it with the team.
 
-If you have any additional questions, please reach out.
+If you have questions, please get in touch.
 
 Good luck! 🙂
